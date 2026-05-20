@@ -1,0 +1,324 @@
+/* Configuração Global */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Cores Personalizadas da Marca */
+.text-primary-dark {
+    color: #0A2540 !important; /* Azul escuro - Confiança */
+}
+
+.text-success-custom {
+    color: #00D084 !important; /* Verde - Saúde */
+}
+
+/* Botão Secundário (Menu) */
+.btn-outline-primary-dark {
+    color: #0A2540;
+    border: 2px solid #0A2540;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary-dark:hover {
+    background-color: #0A2540;
+    color: #ffffff;
+}
+
+/* Botão Principal (Hero) */
+.btn-success-custom {
+    background-color: #00D084;
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-success-custom:hover {
+    background-color: #00b370;
+    color: #ffffff;
+    transform: translateY(-2px); /* Efeito de elevação leve ao passar o mouse */
+}
+
+/* Fundo da Seção Principal */
+/* Atualização da Hero Section com Imagem */
+.hero-section {
+    min-height: 85vh;
+    background-image: url('imgs/BANNER1.jpeg'); /* Verifique o nome do arquivo aqui */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+/* Opcional: Se o texto ficar difícil de ler em cima da imagem original, 
+   podemos adicionar uma leve sombra apenas no texto em vez de escurecer a foto toda */
+.hero-section h1 {
+    text-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5); 
+}
+
+/* Efeito Hover nos links do Menu */
+.nav-link:hover {
+    color: #00D084 !important;
+}
+
+/* Efeito nos Cards de Serviço */
+.card-servico {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px; /* Bordas mais arredondadas dão um ar moderno */
+}
+
+.card-servico:hover {
+    transform: translateY(-10px); /* O card sobe levemente */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important; /* Sombra fica mais intensa */
+    cursor: pointer;
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    background-color: #eaf4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+/* Customização do Dropdown */
+.dropdown-menu {
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px; /* Dá um espacinho do topo */
+}
+
+.dropdown-item {
+    color: #555;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #eaf4f4;
+    color: #00D084;
+}
+
+/* Ajustes para Tablets e Celulares (Telas menores que 992px) */
+@media (max-width: 991.98px) {
+    .hero-section {
+        /* Centralizamos a imagem para que o assunto principal não suma */
+        background-position: center; 
+        /* Adicionamos um filtro escuro APENAS no mobile para o texto do HTML aparecer */
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url('imgs/sua-imagem-com-texto.jpg');
+        background-size: cover;
+        text-align: center !important; /* Centraliza o texto no mobile */
+        min-height: 60vh; /* Diminuímos um pouco a altura no celular */
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem; /* Diminui o título para não quebrar muitas linhas */
+        color: #ffffff !important; /* No mobile, texto branco costuma ler melhor sobre fotos */
+    }
+
+    .hero-section p {
+        color: #f1f1f1 !important;
+    }
+
+    /* Movemos o conteúdo de volta para o centro no mobile */
+    .row.justify-content-end {
+        justify-content: center !important;
+    }
+}
+
+/* Ajustes para Celulares Pequenos (Telas menores que 576px) */
+@media (max-width: 575.98px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .btn-success-custom {
+        width: 100%; /* Botão ocupa a largura toda no celular pequeno (padrão de UX) */
+    }
+}
+
+/* Seção de Logos das Operadoras */
+.logo-operadora {
+    width: 150px;
+    height: 150px; /* Altura padrão para alinhar todas as logos */
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.logo-operadora:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Seção de Tipos de Planos */
+.secao-planos {
+    /* O linear-gradient escurece a imagem para o texto branco ficar legível. 
+       Substitua 'imgs/fundo-planos.jpg' pela sua imagem */
+    background: linear-gradient(to right, rgba(10, 37, 64, 0.9) 0%, rgba(10, 37, 64, 0.3) 100%), 
+                url('imgs/banner2Planos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Opcional: cria um efeito parallax legal ao rolar a página */
+}
+
+/* Efeito nos itens dos planos */
+.plano-item {
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo branco super transparente */
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #00D084; /* Linha verde na lateral esquerda */
+    backdrop-filter: blur(5px); /* Efeito de vidro borrado (Glassmorphism) */
+    transition: transform 0.3s ease;
+}
+
+.plano-item:hover {
+    transform: translateX(10px); /* Move o bloco levemente para a direita ao passar o mouse */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Cards da Seção de Notícias */
+.card-noticia {
+    border-radius: 12px;
+    overflow: hidden; /* Garante que a imagem respeite a borda arredondada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-noticia img {
+    height: 200px; /* Padroniza a altura de todas as fotos de notícias */
+    object-fit: cover;
+}
+
+.card-noticia:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important;
+}
+
+/* Caixas de Contato (Localização, Whats, Email) */
+.contato-box {
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.contato-box:hover {
+    border-color: #00D084 !important; /* A borda da caixa fica verde ao passar o mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.05) !important;
+}
+
+/* Botões Circulares das Redes Sociais */
+.social-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Deixa perfeitamente redondo */
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background-color: #00D084 !important; /* Muda para verde no hover */
+    color: #ffffff !important; /* O ícone fica branco */
+    transform: scale(1.1); /* Dá um pequeno "pulo" (zoom) */
+}
+
+/* Ajuste para o formulário ficar mais compacto e elegante */
+.form-cadastro-box {
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+}
+
+.form-cadastro-box .form-control {
+    padding: 10px 15px; /* Reduzi um pouco o padding interno */
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.form-cadastro-box h4 {
+    font-size: 1.4rem;
+    color: #0A2540;
+}
+
+/* Base comum para todas as páginas internas */
+.hero-interna {
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Base comum para todas as páginas internas */
+.hero-interna {
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Modificadores por Operadora */
+.bg-unimed { 
+    background-image: linear-gradient(to right, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.4)), 
+    url('./imgs/backgroundImgs/bradesco-saude.jpg'); /* Adicionado um ponto extra para subir um nível */
+}
+
+.bg-amil { 
+    background-image: linear-gradient(to right, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.4)), 
+    url('imgs/backgroundImgs/amil-saude.jpg'); 
+}
+
+.bg-bradesco { 
+    background-image: linear-gradient(to right, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.4)), 
+    url('imgs/backgroundImgs/bradesco-saude.jpg'); 
+}
+
+.bg-sulamerica { 
+    background-image: linear-gradient(to right, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.4)), 
+    url('imgs/backgroundImgs/sulamerica-saude.png'); 
+}
+
+.bg-hapvida { 
+    background-image: linear-gradient(to right, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.4)), 
+    url('imgs/backgroundImgs/hapvida-saude.jpg'); 
+}
+
+.bg-smile { 
+    background-image: linear-gradient(to right, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.4)), 
+    url('imgs/backgroundImgs/smile-saude.jpeg'); 
+}
+
+.bg-prevmed { 
+    background-image: linear-gradient(to right, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.4)), 
+    url('imgs/backgroundImgs/amil-saude.jpg'); 
+}
+
+/* Fundo do Cabeçalho */
+.bg-primary-dark {
+    background-color: #0A2540 !important;
+}
+
+/* Deixa os links do menu brancos no cabeçalho escuro */
+.navbar-dark .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Cor verde ao passar o mouse nos links */
+.navbar-dark .nav-link:hover, 
+.navbar-dark .nav-link.active {
+    color: #00D084 !important;
+}
+
+/* Formato oval branco para as logos na seção principal */

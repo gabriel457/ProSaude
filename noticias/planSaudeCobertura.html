@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hapvida e Intermédica se unem - Central Pro Saúde</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        .sidebar-divider {
+            width: 40px;
+            height: 3px;
+            background-color: #003366;
+            margin-bottom: 20px;
+        }
+        .sidebar-link {
+            color: #495057;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .sidebar-link:hover {
+            color: #003366;
+            text-decoration: underline;
+        }
+        /* Estilo sutil para o link da categoria e data */
+        .noticia-meta a {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+        .noticia-corpo p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-dark shadow-sm py-3 sticky-top">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold fs-3 text-primary-dark" href="../index.html">
+            <img src="../imgs/AZUL-NOVA_LOGOSITE.png" alt="logo"><span class="text-success-custom"></span>
+        </a>
+        
+        <!-- Botão Hamburguer -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="menuPrincipal">
+            <ul class="navbar-nav align-items-center gap-2">
+                <li class="nav-item">
+                    <!-- ALTERAÇÃO 2: Troquei 'text-secondary' por 'text-white' nos links principais -->
+                    <a class="nav-link fw-semibold text-white px-3" href="../index.html">Início</a>
+                </li>
+
+                <!-- Dropdown: Planos de Saúde -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold text-white px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Planos de Saúde
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm">
+                        <!-- Os links de dentro do dropdown continuam originais para não sumirem no fundo branco da caixinha -->
+                        <li><a class="dropdown-item py-2" href="../planosSaude/bradesco.html">Bradesco Saúde</a></li>
+                        <li><a class="dropdown-item py-2" href="../planosSaude/amil.html">Amil Saúde</a></li>
+                        <li><a class="dropdown-item py-2" href="../planosSaude/sulamerica.html">Sulamérica</a></li>
+                        <li><a class="dropdown-item py-2" href="../planosSaude/prevmed.html">PrevMed</a></li>
+                        <li><a class="dropdown-item py-2" href="../planosSaude/hapvida.html">HapVida</a></li>
+                        <li><a class="dropdown-item py-2" href="../planosSaude/unimed.html">Unimed</a></li>
+                        <li><a class="dropdown-item py-2" href="../planosSaude/smile.html">Smile Saúde</a></li>
+                    </ul>
+                </li>
+
+                <!-- Dropdown: Plano Odonto -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold text-white px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Planos Odonto
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm">
+                        <li><a class="dropdown-item py-2" href="../planosOdonto/unidentis.html">Unidentis</a></li>
+                        <li><a class="dropdown-item py-2" href="../planosOdonto/clin.html">Clin Odonto</a></li>
+                        <li><a class="dropdown-item py-2" href="../planosOdonto/dentalCenter.html">Dental Center</a></li>
+                        <li><a class="dropdown-item py-2" href="../planosOdonto/amilDental.html">Amil Dental</a></li>
+                        <li><a class="dropdown-item py-2" href="../planosOdonto/bradescoDental.html">Bradesco Dental</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-white px-3" href="../noticias.html">Notícias</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#contato" class="nav-link fw-semibold text-white px-3">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+    <main class="py-5 bg-white">
+        <div class="container" style="max-width: 900px;">
+            
+            <h1 class="display-5 fw-bold text-primary-dark mb-3">Planos de saúde vão cobrir teste para Coronavírus</h1>
+            <div class="sidebar-divider mb-4"></div>
+
+            <div class="noticia-meta mb-4">
+                <a href="./noticias.html" class="text-uppercase text-decoration-none fw-bold text-danger mb-1 d-block" style="font-size: 0.75rem;">Plano de Saúde</a>
+                <span class="text-muted small">Sexta, Fevereiro 11, 2022</span>
+            </div>
+
+            <div class="mb-5">
+                <img src="../imgs/imgNoticias/imgNoticias6.jpg" class="img-fluid rounded-4 w-100 shadow-sm" alt="Fusão Hapvida" style="max-height: 500px; object-fit: cover;">
+            </div>
+
+            <article class="noticia-corpo text-secondary mb-5">
+                <p class="lead fw-normal text-dark">Em reunião realizada na tarde desta terça-feira (10/03), na sede da Agência Nacional de Saúde Suplementar (ANS), com representantes de operadoras de planos de saúde, de entidades representativas do setor e os diretores da reguladora, ficou acertada a inclusão do exame para detecção do Coronavírus (Covid-19) no Rol de Procedimentos e Eventos em Saúde, que constitui a cobertura mínima obrigatória para os beneficiários de planos de saúde.</p>
+                <p>A Agência está detalhando os aspectos técnicos da medida, como o tipo de exame que deverá fazer parte da cobertura obrigatória e as Diretrizes de Utilização (DUTs) que serão necessárias para adequação aos protocolos do Ministério da Saúde e prazos necessários para que a medida seja implementada.</p>
+                <p>A ANS esclarece que a cobertura do tratamento aos pacientes diagnosticados com o Covid-19 já é assegurada aos beneficiários de planos de saúde, de acordo com a segmentação de seus planos (ambulatorial, hospitalar).</p>
+                <p>Fonte: http://www.ans.gov.br/</p>
+            </article>
+
+            <div class="text-center mb-5">
+                <h4 class="fw-bold text-primary-dark mb-3">Solicite um orçamento de plano de saúde</h4>
+                <a href="https://wa.me/5583998836619" target="_blank" class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-sm mb-3">SOLICITE UM ORÇAMENTO</a>
+                <br>
+                <a href="#" class="text-decoration-underline text-primary-dark fw-semibold">Fazer download da rede credenciada</a>
+            </div>
+
+            <hr class="my-5 opacity-25">
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary-dark mb-2">Pesquisar</h5>
+                    <div class="sidebar-divider"></div>
+                    <div class="input-group mb-4">
+                        <input type="text" class="form-control bg-light border-0" placeholder="Digite e pressione Enter...">
+                        <button class="btn btn-light text-muted border-0" type="button"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-primary-dark mb-2">Categorias</h5>
+                    <div class="sidebar-divider"></div>
+                    <ul class="list-unstyled d-flex flex-wrap gap-3">
+                        <li><a href="./noticias.html" class="sidebar-link">Amil</a></li>
+                        <li><a href="./noticias.html" class="sidebar-link">Hapvida</a></li>
+                        <li><a href="./noticias.html" class="sidebar-link">João Pessoa</a></li>
+                        <li><a href="./noticias.html" class="sidebar-link">Plano de saúde</a></li>
+                        <li><a href="./noticias.html" class="sidebar-link">Smile Saúde</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="contato" class="py-5 bg-white text-center border-top">
+        <div class="container">
+            <p class="text-muted small mb-0">Central Pro Saúde - CNPJ: 27.027.587/0001-89</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - Central Pro Saúde</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Efeito hover suave nos cards de notícia */
+        .card-noticia {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-noticia:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        /* Linha decorativa da sidebar */
+        .sidebar-divider {
+            width: 40px;
+            height: 3px;
+            background-color: #003366; /* Substitua pela cor primary-dark do seu site */
+            margin-bottom: 20px;
+        }
+        /* Links da sidebar */
+        .sidebar-link {
+            color: #495057;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .sidebar-link:hover {
+            color: #003366;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-dark shadow-sm py-3 sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3 text-primary-dark" href="./index.html">
+            <img src="imgs/AZUL-NOVA_LOGOSITE.png" alt="logo"><span class="text-success-custom"></span>
+        </a>
+        
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="menuPrincipal">
+            <ul class="navbar-nav align-items-center gap-2">
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-white px-3" href="./index.html">Início</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold text-white px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Planos de Saúde
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm">
+                        <li><a class="dropdown-item py-2" href="./planosSaude/bradesco.html">Bradesco Saúde</a></li>
+                        <li><a class="dropdown-item py-2" href="./planosSaude/amil.html">Amil Saúde</a></li>
+                        <li><a class="dropdown-item py-2" href="./planosSaude/sulamerica.html">Sulamérica</a></li>
+                        <li><a class="dropdown-item py-2" href="./planosSaude/prevmed.html">PrevMed</a></li>
+                        <li><a class="dropdown-item py-2" href="./planosSaude/hapvida.html">HapVida</a></li>
+                        <li><a class="dropdown-item py-2" href="./planosSaude/unimed.html">Unimed</a></li>
+                        <li><a class="dropdown-item py-2" href="./planosSaude/smile.html">Smile Saúde</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold text-white px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Planos Odonto
+                    </a>
+                    <ul class="dropdown-menu border-0 shadow-sm">
+                        <li><a class="dropdown-item py-2" href="./planosOdonto/unidentis.html">Unidentis</a></li>
+                        <li><a class="dropdown-item py-2" href="./planosOdonto/clin.html">Clin Odonto</a></li>
+                        <li><a class="dropdown-item py-2" href="./planosOdonto/dentalCenter.html">Dental Center</a></li>
+                        <li><a class="dropdown-item py-2" href="./planosOdonto/amilDental.html">Amil Dental</a></li>
+                        <li><a class="dropdown-item py-2" href="./planosOdonto/bradescoDental.html">Bradesco Dental</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-white px-3 active" href="./noticias.html">Notícias</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#contato" class="nav-link fw-semibold text-white px-3">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center py-4">
+            <h1 class="display-5 fw-bold text-primary-dark mb-3">Portal de Notícias</h1>
+            <p class="lead text-muted">Fique por dentro das novidades, fusões e dicas sobre o mercado de saúde suplementar.</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                
+                <div class="col-lg-8">
+                    
+                    <div class="d-flex flex-wrap gap-2 mb-4" id="filtros-noticias">
+                        <button class="btn btn-outline-secondary btn-sm rounded-0 active" data-filter="tudo">Tudo</button>
+                        <button class="btn btn-outline-secondary btn-sm rounded-0" data-filter="hapvida">Hapvida</button>
+                        <button class="btn btn-outline-secondary btn-sm rounded-0" data-filter="joao-pessoa">João Pessoa</button>
+                        <button class="btn btn-outline-secondary btn-sm rounded-0" data-filter="plano-saude">Plano de saúde</button>
+                        <button class="btn btn-outline-secondary btn-sm rounded-0" data-filter="smile-saude">Smile Saúde</button>
+                    </div>
+
+                    <div class="row g-4" id="container-noticias">
+                        
+                        <div class="col-md-6 noticia-item" data-category="hapvida">
+                            <div class="card h-100 border-0 bg-white shadow-sm card-noticia rounded-4 overflow-hidden">
+                                <img src="imgs/imgNoticias/imgNoticias1.jpg" class="card-img-top" alt="Hapvida e Intermédica" style="height: 200px; object-fit: cover;">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title fw-bold text-primary-dark mb-3">Hapvida e Intermédica se unem a partir de hoje e formam gigante da saúde</h5>
+                                    <p class="card-text text-muted small mb-4">Empresa será o maior plano de saúde do hemisfério sul, com 15 milhões de clientes. O Sistema Hapvida e o Grupo NotreDame Intermédica (GNDI) concluem nesta sexta-feira a fusão dos negócios...</p>
+                                    <a href="./noticias/hapvidaIntermedica.html" class="text-primary-dark fw-semibold text-decoration-none border-bottom border-primary-dark pb-1">Ler mais</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 noticia-item" data-category="smile-saude">
+                            <div class="card h-100 border-0 bg-white shadow-sm card-noticia rounded-4 overflow-hidden">
+                                <img src="imgs/imgNoticias/imgNoticias2.webp" class="card-img-top" alt="Hapvida compra Smile" style="height: 200px; object-fit: cover;">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title fw-bold text-primary-dark mb-3">Hapvida anuncia compra de Grupo Smile por R$ 300 milhões</h5>
+                                    <p class="card-text text-muted small mb-4">A Hapvida fechou a compra do Grupo Smile (Smile Saúde), que possui uma operadora de planos de saúde, um hospital próprio e uma clínica médica. O preço de aquisição inclui o imóvel...</p>
+                                    <a href="./noticias/hapvidaSmile.html" class="text-primary-dark fw-semibold text-decoration-none border-bottom border-primary-dark pb-1">Ler mais</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 noticia-item" data-category="joao-pessoa">
+                            <div class="card h-100 border-0 bg-white shadow-sm card-noticia rounded-4 overflow-hidden">
+                                <img src="imgs/imgNoticias/imgNoticias3.jpg" class="card-img-top" alt="Mudança de Endereço" style="height: 200px; object-fit: cover;">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title fw-bold text-primary-dark mb-3">O LABORATÓRIO DA HAPVIDA IMAGEM E VIDA JOÃO PESSOA ESTÁ EM NOVO ENDEREÇO</h5>
+                                    <p class="card-text text-muted small mb-4">Para melhor atender aos beneficiários, informamos que a unidade laboratorial passou por uma mudança de endereço, trazendo instalações mais modernas e confortáveis...</p>
+                                    <a href="./noticias/hapvidaLab.html" class="text-primary-dark fw-semibold text-decoration-none border-bottom border-primary-dark pb-1">Ler mais</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 noticia-item" data-category="plano-saude">
+                            <div class="card h-100 border-0 bg-white shadow-sm card-noticia rounded-4 overflow-hidden">
+                                <img src="imgs/imgNoticias/imgNoticias4.jpg" class="card-img-top" alt="Mudança de Endereço" style="height: 200px; object-fit: cover;">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title fw-bold text-primary-dark mb-3">Planos de Saúde em João Pessoa</h5>
+                                    <p class="card-text text-muted small mb-4">Conheça os planos de saúde e odontológicos disponíveis em João Pessoa. Fale conosco e solicite uma cotação de preços. Os planos de Saúde João Pessoa têm o destaque de estarem devidamente regulamentados com as regras impostas pela Agência Nacional de Saúde Suplementar (ANS)...</p>
+                                    <a href="./noticias/planosSaude.html" class="text-primary-dark fw-semibold text-decoration-none border-bottom border-primary-dark pb-1">Ler mais</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 noticia-item" data-category="hapvida">
+                            <div class="card h-100 border-0 bg-white shadow-sm card-noticia rounded-4 overflow-hidden">
+                                <img src="imgs/imgNoticias/imgNoticias5.png" class="card-img-top" alt="Mudança de Endereço" style="height: 200px; object-fit: cover;">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title fw-bold text-primary-dark mb-3">NOVA HAPCLÍNICA ARIANO SUASSUNA – Hapvida João Pessoa</h5>
+                                    <p class="card-text text-muted small mb-4">Para oferecer o melhor para você, agora você conta com a Nova Hapclínica Ariano Suassuna. Uma moderna estrutura para acolher ainda melhor você e sua família. Importante! Os serviços de saúde até então atendidos na Hapclínica João Pessoa, passam a ser prestados na nova Hapclínica Ariano Suassuna...</p>
+                                    <a href="./noticias/novaHapclinica.html" class="text-primary-dark fw-semibold text-decoration-none border-bottom border-primary-dark pb-1">Ler mais</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 noticia-item" data-category="plano-saude">
+                            <div class="card h-100 border-0 bg-white shadow-sm card-noticia rounded-4 overflow-hidden">
+                                <img src="imgs/imgNoticias/imgNoticias6.jpg" class="card-img-top" alt="Mudança de Endereço" style="height: 200px; object-fit: cover;">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title fw-bold text-primary-dark mb-3">Planos de saúde vão cobrir teste para Coronavírus</h5>
+                                    <p class="card-text text-muted small mb-4">Em reunião realizada na tarde desta terça-feira (10/03), na sede da Agência Nacional de Saúde Suplementar (ANS), ficou acertada a inclusão do exame para detecção do Coronavírus (Covid-19) no Rol de Procedimentos e Eventos em Saúde...</p>
+                                    <a href="./noticias/planSaudeCobertura.html" class="text-primary-dark fw-semibold text-decoration-none border-bottom border-primary-dark pb-1">Ler mais</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="bg-white p-4 rounded-4 shadow-sm">
+                        
+                        <div class="mb-5">
+                            <h5 class="fw-bold text-primary-dark mb-2">Pesquisar</h5>
+                            <div class="sidebar-divider"></div>
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0" placeholder="Digite e pressione Enter...">
+                                <button class="btn btn-light text-muted border-0" type="button">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-5">
+                            <h5 class="fw-bold text-primary-dark mb-2">Posts recentes</h5>
+                            <div class="sidebar-divider"></div>
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="./noticias/hapvidaIntermedica.html" class="sidebar-link">Hapvida e Intermédica se unem a partir de hoje e formam gigante da saúde</a></li>
+                                <li><a href="./noticias/hapvidaSmile.html" class="sidebar-link">Hapvida anuncia compra de Grupo Smile por R$ 300 milhões</a></li>
+                                <li><a href="./noticias/hapvidaLab.html" class="sidebar-link">O LABORATÓRIO DA HAPVIDA IMAGEM E VIDA JOÃO PESSOA ESTÁ EM NOVO ENDEREÇO</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h5 class="fw-bold text-primary-dark mb-2">Categorias</h5>
+                            <div class="sidebar-divider"></div>
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="#" class="sidebar-link sidebar-category-btn" data-filter="tudo">Tudo</a></li>
+                                <li><a href="#" class="sidebar-link sidebar-category-btn" data-filter="hapvida">Hapvida</a></li>
+                                <li><a href="#" class="sidebar-link sidebar-category-btn" data-filter="joao-pessoa">João Pessoa</a></li>
+                                <li><a href="#" class="sidebar-link sidebar-category-btn" data-filter="plano-saude">Plano de saúde</a></li>
+                                <li><a href="#" class="sidebar-link sidebar-category-btn" data-filter="smile-saude">Smile Saúde</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="py-5 bg-white text-center">
+        <div class="container py-lg-4">
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="p-4 border rounded-4 shadow-sm h-100 contato-box">
+                        <i class="bi bi-geo-alt-fill fs-1 text-success-custom mb-3 d-block"></i>
+                        <h4 class="fw-bold text-primary-dark mb-3">Nossa Localização</h4>
+                        <a href="https://maps.google.com/?q=Central+Pro+Saude" target="_blank" class="btn btn-outline-primary-dark w-100">Abrir no Mapa</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-4 border rounded-4 shadow-sm h-100 contato-box">
+                        <i class="bi bi-whatsapp fs-1 text-success-custom mb-3 d-block"></i>
+                        <h4 class="fw-bold text-primary-dark mb-3">Fale pelo WhatsApp</h4>
+                        <a href="https://wa.me/5583998836619" target="_blank" class="btn btn-outline-primary-dark w-100">Iniciar Conversa</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-4 border rounded-4 shadow-sm h-100 contato-box">
+                        <i class="bi bi-envelope-fill fs-1 text-success-custom mb-3 d-block"></i>
+                        <h4 class="fw-bold text-primary-dark mb-3">E-mail para Contato</h4>
+                        <a href="mailto:contato@centralprosaude.com.br" class="btn btn-outline-primary-dark w-100">Enviar E-mail</a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="text-muted opacity-25 mb-5 mx-auto" style="max-width: 800px;">
+
+            <div class="mb-5">
+                <h6 class="fw-bold text-primary-dark text-uppercase mb-4">Siga-nos</h6>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="social-icon bg-light text-primary-dark" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon bg-light text-primary-dark" title="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon bg-light text-primary-dark" title="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x7ace7c9c5dc18ff:0x126f03e980d71fe0?source=g.page.m" target="_blank" class="social-icon bg-light text-primary-dark" title="Google Maps"><i class="bi bi-google"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h5 class="fw-bold text-primary-dark mb-1">Central Pro Saúde</h5>
+                <p class="text-muted small mb-0">CNPJ: 27.027.587/0001-89</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function aplicarFiltro(categoria) {
+            // Sincroniza a classe 'active' nos botões superiores
+            document.querySelectorAll('#filtros-noticias button').forEach(btn => {
+                if (btn.getAttribute('data-filter') === categoria) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Gerencia a exibição dos cards com base na categoria
+            const itens = document.querySelectorAll('.noticia-item');
+            itens.forEach(item => {
+                if (categoria === 'tudo' || item.getAttribute('data-category') === categoria) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Monitora o clique nos botões superiores
+        document.querySelectorAll('#filtros-noticias button').forEach(button => {
+            button.addEventListener('click', () => {
+                const filtro = button.getAttribute('data-filter');
+                aplicarFiltro(filtro);
+            });
+        });
+
+        // Monitora o clique nos links de categoria da Sidebar (Barra Lateral)
+        document.querySelectorAll('.sidebar-category-btn').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const filtro = link.getAttribute('data-filter');
+                aplicarFiltro(filtro);
+                
+                // Rola a página suavemente até o contêiner de notícias para melhor visualização
+                document.getElementById('filtros-noticias').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+    </script>
+</body>
+</html>
